@@ -1,0 +1,44 @@
+<doctype html>
+<html>
+	<head>
+	<title>FCG 2021 - Ejemplo WebGL</title>
+
+	<!-- Estilo -->
+	<link href="style.css" rel="stylesheet">
+
+	<!-- Shaders -->
+	<script type="x-shader/x-vertex"   id="vertexShader"   src="vertex_shader.js">
+	attribute vec3 pos;
+	attribute vec4 clr;
+	
+	uniform mat4 trans;
+	
+	varying vec4 vcolor;
+	
+	void main()
+	{
+		gl_Position = trans * vec4(pos,1);
+		vcolor = clr;
+	}
+	</script>
+	
+	<script type="x-shader/x-fragment" id="fragmentShader" src="fragment_shader.js">
+	precision mediump float;
+
+	varying vec4 vcolor;
+	
+	void main()
+	{
+		gl_FragColor = vcolor;
+	}
+	</script>
+
+	<!-- Proyecto -->
+	<script type="text/javascript"     id="includedscript" src="ejemplo_webgl.js"></script>	
+
+	</head>
+
+	<body>
+		<canvas id="mycanvas"></canvas>
+	</body>
+</html>
