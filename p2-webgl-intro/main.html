@@ -1,7 +1,7 @@
 <doctype html>
 <html>
 	<head>
-	<title>FCG 2021 - Ejemplo WebGL</title>
+	<title>PSG 2022 - Ejemplo WebGL</title>
 
 	<!-- Estilo -->
 	<link href="style.css" rel="stylesheet">
@@ -17,11 +17,11 @@
 	
 	void main()
 	{
-		gl_Position = trans * vec4(pos,1);
+		gl_Position = trans * vec4(pos + vec3(0,0,0),1);
 		vcolor = clr;
 	}
 	</script>
-	
+
 	<script type="x-shader/x-fragment" id="fragmentShader" src="fragment_shader.js">
 	precision mediump float;
 
@@ -34,7 +34,7 @@
 	</script>
 
 	<!-- Proyecto -->
-	<script type="text/javascript"     id="includedscript" src="ejemplo_webgl.js"></script>	
+	<script type="text/javascript" src="ejemplo_webgl.js"></script>	
 
 	</head>
 

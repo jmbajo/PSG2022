@@ -114,11 +114,13 @@ window.onload = function()
 
 	var m = gl.getUniformLocation(prog,'trans');
 
+
+	// CUIDADO que la matriz se sube column-major
 	var matrix = [
-		1,0,0,0,
-		0,1,0,0,
-		0,0,1,0,
-		0,0,0,1 ];
+		1 ,  0,   0,  0,
+		0,   1,   0,  0,
+		0,   0,   1,  0,
+		0,   0,   0,  1 ];
 
 	gl.useProgram(prog);
 	gl.uniformMatrix4fv( m, false, matrix );
@@ -147,7 +149,5 @@ window.onload = function()
 	// Ahora que ya está todo seteado, renderizamos la escena. 
 	// El primer paso es siempre limpiar la imagen. 
 	// Cada vez que cambie la escena, tenemos que reenderizar nuevamente. 
-	gl.clear( gl.COLOR_BUFFER_BIT );
-	gl.useProgram( prog );
-	gl.drawArrays( gl.TRIANGLES, 0, 3 );
+
 }
