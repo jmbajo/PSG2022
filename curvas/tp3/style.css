@@ -1,0 +1,42 @@
+html {
+	color: black;
+	background-color: white;
+	font-family: Arial;
+	overflow: hidden;
+}
+body {
+	padding: 0;
+	margin: 0;
+	height: 100%;
+}
+canvas, #overlay {
+	display: block;
+	position: fixed;
+	top:  0;
+	left: 0;
+	width:  100%;
+	height: 100%;
+}
+circle {
+	fill: rgb(0, 0, 0);
+	stroke: black;
+	stroke-width: 1px;
+	r: 5px;
+}
+circle:hover {
+	fill: rgb(255, 0, 0);
+	cursor: hand;
+	stroke-width: 4px;
+	stroke: rgb(255, 0, 0);
+}
+line {
+	stroke: black;
+	stroke-width: 2px;
+	stroke-dasharray: 2, 10;
+}
+path {
+	stroke: rgb(99, 99, 99);
+	stroke-width: 2px;
+	stroke-dasharray: 2, 10;
+	fill: none;
+}
